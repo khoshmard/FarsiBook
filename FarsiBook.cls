@@ -14,6 +14,12 @@
 [2025/02/21 v0.0.1 A Persian document class in XeLaTeX for typesetting Persian books]
 % بارگذاری کلاس پایه
 \LoadClass[11pt, a4paper, twoside]{book}
+% بسته‌ای برای قرار دادن شکل در صفحات
+\RequirePackage[]{graphicx}
+% دستوری برای تغییر مسیر فراخوانی شکل‌ها
+\newcommand{\setfigurepath}[1]{%  
+    \graphicspath{{#1/}}%  
+}
 % بارگذاری کلاس حروف‌نگاری فارسی
 \RequirePackage[localise]{xepersian}
 % قلم پیش‌فرض زبان فارس
