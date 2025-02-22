@@ -26,4 +26,5 @@
 \settextfont{B Zar}
 % قلم پیشفرض زبان انگلیسی
 \setlatintextfont{B Zar}
-
+% بارگذاری دستورات عنوان‌بندی
+\input{Title}

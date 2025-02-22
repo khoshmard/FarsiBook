@@ -1,0 +1,55 @@
+%%
+%% This is file `Title.tex'.
+%% __________________________________
+%% Copyright © 2025 Abbas Hatami Khoshmardan
+%% https://www.2357.ir
+%% https://www.khoshmard.ir
+%% khoshmard@gmail.com
+%% ahatami@aut.ac.ir
+%%
+%%
+\newcommand{\affiliation}[1]{\gdef\@affiliation{#1}}
+\newcommand{\theaffiliation}{\@affiliation}
+\newcommand{\وابستگی}{\affiliation}
+
+\newcommand{\titlelatin}[1]{\gdef\@titlelatin{#1}}
+\newcommand{\thetitlelatin}{\@titlelatin}
+\newcommand{\عنوان‌لاتین}{\titlelatin}
+
+\newcommand{\authorlatin}[1]{\gdef\@authorlatin{#1}}
+\newcommand{\theauthorlatin}{\@authorlatin}
+\newcommand{\نویسنده‌لاتین}{\authorlatin}
+
+\newcommand{\affiliationlatin}[1]{\gdef\@affiliationlatin{#1}}
+\newcommand{\theaffiliationlatin}{\@affiliationlatin}
+\newcommand{\وابستگی‌لاتین}{\affiliationlatin}
+
+\newcommand{\datelatin}[1]{\gdef\@datelatin{#1}}
+\newcommand{\thedatelatin}{\@datelatin}
+\newcommand{\تاریخ‌لاتین}{\datelatin}
+
+\newcommand{\maketitlefarsi}{
+    \begin{center}
+        \huge \bfseries \@title
+        \vskip 2em
+        \large \@author
+        \vskip 1em
+        \normalsize \@affiliation
+        \vfill
+        \small \@date
+    \end{center}
+ }
+\newcommand{\عنوان‌سازفارسی}{\maketitlefarsi}
+
+\newcommand{\maketitlelatin}{
+    \begin{center}
+        \huge \bfseries \@titlelatin
+        \vskip 2em
+        \large \@authorlatin
+        \vskip 1em
+        \normalsize \@affiliationlatin
+        \vfill
+        \small \@datelatin
+    \end{center}
+}
+\newcommand{\عنوان‌سازلاتین}{\maketitlelatin}
