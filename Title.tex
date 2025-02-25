@@ -8,9 +8,42 @@
 %% ahatami@aut.ac.ir
 %%
 %%
-\newcommand{\affiliation}[1]{\gdef\@affiliation{#1}}
-\newcommand{\theaffiliation}{\@affiliation}
-\newcommand{\وابستگی}{\affiliation}
+% چند دستور برای تغییر حالت عنوان‌بندی الهام گرفته شده از بسته‌ی titling
+\newcommand{\pretitlefarsi}[1]{\def\@bspretitlefarsi{#1}}
+\newcommand{\پیش‌ازعنوان‌فارسی}{\pretitlefarsi}
+
+\newcommand{\posttitlefarsi}[1]{\def\@bsposttitlefarsi{#1}}
+\newcommand{\پس‌ازعنوان‌فارسی}{\posttitlefarsi}
+
+\newcommand{\preauthorfarsi}[1]{\def\@bspreauthorfarsi{#1}}
+\newcommand{\پیش‌ازنویسنده‌فارسی}{\preauthorfarsi}
+
+\newcommand{\postauthorfarsi}[1]{\def\@bspostauthorfarsi{#1}}
+\newcommand{\پس‌ازنویسنده‌فارسی}{\postauthorfarsi}
+
+\newcommand{\predatefarsi}[1]{\def\@bspredatefarsi{#1}}
+\newcommand{\پیش‌ازتاریخ‌فارسی}{\predatefarsi}
+
+\newcommand{\postdatefarsi}[1]{\def\@bspostdatefarsi{#1}}
+\newcommand{\پس‌ازتاریخ‌فارسی}{\postdatefarsi}
+
+\newcommand{\pretitlelatin}[1]{\def\@bspretitlelatin{#1}}
+\newcommand{\پیش‌ازعنوان‌لاتین}{\pretitlelatin}
+
+\newcommand{\posttitlelatin}[1]{\def\@bsposttitlelatin{#1}}
+\newcommand{\پس‌ازعنوان‌لاتین}{\posttitlelatin}
+
+\newcommand{\preauthorlatin}[1]{\def\@bspreauthorlatin{#1}}
+\newcommand{\پیش‌ازنویسنده‌لاتین}{\preauthorlatin}
+
+\newcommand{\postauthorlatin}[1]{\def\@bspostauthorlatin{#1}}
+\newcommand{\پس‌ازنویسنده‌لاتین}{\postauthorlatin}
+
+\newcommand{\predatelatin}[1]{\def\@bspredatelatin{#1}}
+\newcommand{\پیش‌ازتاریخ‌لاتین}{\predatelatin}
+
+\newcommand{\postdatelatin}[1]{\def\@bspostdatelatin{#1}}
+\newcommand{\پس‌ازتاریخ‌لاتین}{\postdatelatin}
 
 \newcommand{\titlelatin}[1]{\gdef\@titlelatin{#1}}
 \newcommand{\thetitlelatin}{\@titlelatin}
@@ -20,36 +53,67 @@
 \newcommand{\theauthorlatin}{\@authorlatin}
 \newcommand{\نویسنده‌لاتین}{\authorlatin}
 
-\newcommand{\affiliationlatin}[1]{\gdef\@affiliationlatin{#1}}
-\newcommand{\theaffiliationlatin}{\@affiliationlatin}
-\newcommand{\وابستگی‌لاتین}{\affiliationlatin}
-
 \newcommand{\datelatin}[1]{\gdef\@datelatin{#1}}
 \newcommand{\thedatelatin}{\@datelatin}
 \newcommand{\تاریخ‌لاتین}{\datelatin}
 
-\newcommand{\maketitlefarsi}{
+\pretitlefarsi{
     \begin{center}
-        \huge \bfseries \@title
-        \vskip 2em
-        \large \@author
-        \vskip 1em
-        \normalsize \@affiliation
-        \vfill
-        \small \@date
+    \huge \bfseries}
+\posttitlefarsi{
     \end{center}
+    \vskip 2em}
+
+\preauthorfarsi{
+    \begin{center}
+    \large \bfseries
+    \begin{tabular}[t]{c}}
+\postauthorfarsi{
+    \end{tabular}
+    \end{center}}
+
+\predatefarsi{
+    \vfil
+    \begin{center}
+    \small}
+\postdatefarsi{
+    \end{center}
+    \normalsize}
+
+\pretitlelatin{
+    \begin{center}
+    \huge \bfseries}
+\posttitlelatin{
+    \end{center}
+    \vskip 2em}
+
+\preauthorlatin{
+    \begin{center}
+    \large \bfseries
+    \begin{tabular}[t]{c}}
+\postauthorlatin{
+    \end{tabular}
+    \end{center}}
+
+\predatelatin{
+    \vfil
+    \begin{center}
+    \small}
+\postdatelatin{
+    \end{center}
+    \normalsize}
+
+\newcommand{\maketitlefarsi}{
+    \@bspretitlefarsi \@title \@bsposttitlefarsi
+    \@bspreauthorfarsi \@author \@bspostauthorfarsi
+    \@bspredatefarsi \@date \@bspostdatefarsi
  }
 \newcommand{\عنوان‌سازفارسی}{\maketitlefarsi}
 
 \newcommand{\maketitlelatin}{
-    \begin{center}
-        \huge \bfseries \@titlelatin
-        \vskip 2em
-        \large \@authorlatin
-        \vskip 1em
-        \normalsize \@affiliationlatin
-        \vfill
-        \small \@datelatin
-    \end{center}
+    \@bspretitlelatin \@titlelatin \@bsposttitlelatin
+    \@bspreauthorlatin \@authorlatin \@bspostauthorlatin
+    \@bspredatelatin \@datelatin \@bspostdatelatin
+
 }
 \newcommand{\عنوان‌سازلاتین}{\maketitlelatin}
