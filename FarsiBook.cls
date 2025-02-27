@@ -12,8 +12,18 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{FarsiBook}
 [2025/02/21 v0.0.1 A Persian document class in XeLaTeX for typesetting Persian books]
+% گزینه نمایش برش
+\newif\ifbook@crop
+\book@croptrue
+\DeclareOption{nocrop}{\book@cropfalse}
+% گرفتن دیگر گزینه‌های مربوط به کلاس پایه
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
+\ProcessOptions
 % بارگذاری کلاس پایه
-\LoadClass[11pt, a4paper, twoside]{book}
+\LoadClass[12pt, b5paper, twoside]{book}
+
+% بارگذاری دستورات هندسه‌ی کاغذ
+\input{Geometry}
 % بسته‌ای برای قرار دادن شکل در صفحات
 \RequirePackage[]{graphicx}
 % دستوری برای تغییر مسیر فراخوانی شکل‌ها
@@ -23,8 +33,8 @@
 % بارگذاری کلاس حروف‌نگاری فارسی
 \RequirePackage[localise]{xepersian}
 % قلم پیش‌فرض زبان فارس
-\settextfont{B Zar}
+\settextfont{Yas}
 % قلم پیشفرض زبان انگلیسی
-\setlatintextfont{B Zar}
+\setlatintextfont{Yas}
 % بارگذاری دستورات عنوان‌بندی
 \input{Title}

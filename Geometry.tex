@@ -1,0 +1,24 @@
+%%
+%% This is file `Geometry.tex'.
+%% __________________________________
+%% Copyright © 2025 Abbas Hatami Khoshmardan
+%% https://www.2357.ir
+%% https://www.khoshmard.ir
+%% khoshmard@gmail.com
+%% ahatami@aut.ac.ir
+%%
+%%
+
+ % تعیین فاصله بین سربرگ و اولین خط هر صفحه
+\headsep=.7cm
+
+ % زیاد کردن ارتفاع سربرگ برای رفع هشدارهای مربوط به کم بودن ارتفاع سربرگ
+\setlength{\headheight}{13.25pt}
+% بسته‌ای برای تعیین اندازه بلوک (چارچوب) متن با احتساب مقدار دستور بالا
+% قطع کتاب وزیری است
+\ifbook@crop
+\RequirePackage[total={12cm,19.1cm},centering,includehead=true,paperwidth=16.5cm, paperheight=23.5cm]{geometry}
+\RequirePackage[cross,center,noinfo,b5]{crop}
+\else
+\RequirePackage[total={12cm,19.1cm},centering,includehead=true]{geometry}
+\fi
