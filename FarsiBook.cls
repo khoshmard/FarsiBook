@@ -30,6 +30,8 @@
 \newcommand{\setfigurepath}[1]{%  
     \graphicspath{{#1/}}%  
 }
+% بارگذاری دستورات مرجع‌نویسی
+\input{Reference}
 % بارگذاری کلاس حروف‌نگاری فارسی
 \RequirePackage[localise]{xepersian}
 % قلم پیش‌فرض زبان فارس

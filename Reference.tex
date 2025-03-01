@@ -1,0 +1,27 @@
+%%
+%% This is file `Reference.tex'.
+%% __________________________________
+%% Copyright © 2025 Abbas Hatami Khoshmardan
+%% https://www.2357.ir
+%% https://www.khoshmard.ir
+%% khoshmard@gmail.com
+%% ahatami@aut.ac.ir
+%%
+%%
+ % بسته و دستوری برای ریست کردن شماره پانویس‌ها در هر صفحه
+\RequirePackage{zref-perpage}
+\zmakeperpage{footnote}
+% بسته‌ای برای تبدیل ارجاع‌های کتاب به لینک‌های کلیک‌شدنی
+% گزینه‌ای برای بازگشت به محل ارجاع
+\RequirePackage[pagebackref=true]{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=blue,
+    filecolor=black,
+    linkcolor=red,
+    urlcolor=pink
+}
+% بسته‌ای برای گزینه‌های بیشتر در ارجاع‌نویسی
+\RequirePackage{natbib}
+% بسته‌ای برای لیست مراجع و منابع در هر فصل
+\RequirePackage{chapterbib}
