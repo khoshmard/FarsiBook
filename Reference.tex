@@ -12,16 +12,21 @@
 \RequirePackage{zref-perpage}
 \zmakeperpage{footnote}
 % بسته‌ای برای تبدیل ارجاع‌های کتاب به لینک‌های کلیک‌شدنی
-% گزینه‌ای برای بازگشت به محل ارجاع
-\RequirePackage[pagebackref=true]{hyperref}
+
+\RequirePackage{hyperref}
 \hypersetup{
-    colorlinks,
+    colorlinks=true,
     citecolor=blue,
     filecolor=black,
     linkcolor=red,
-    urlcolor=pink
+    urlcolor=green,
 }
 % بسته‌ای برای گزینه‌های بیشتر در ارجاع‌نویسی
-\RequirePackage{natbib}
-% بسته‌ای برای لیست مراجع و منابع در هر فصل
-\RequirePackage{chapterbib}
+% گزینه‌ای برای بازگشت به محل ارجاع
+% گزینه‌ای برای لیست مراجع و منابع در هر فصل
+\RequirePackage[backend=biber,refsection=chapter,backref=true,style=numeric,sorting=none]{biblatex}
+% تنظیم متن ارجاع بازگشتی
+\DefineBibliographyStrings{english}{
+    backrefpage={\rl{ارجاع‌شده در صفحهٔ}},
+    backrefpages={\rl{ارجاع‌شده در صفحه‌های}}
+}
