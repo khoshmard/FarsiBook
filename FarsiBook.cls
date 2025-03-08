@@ -30,6 +30,9 @@
 \newcommand{\setfigurepath}[1]{%  
     \graphicspath{{#1/}}%  
 }
+% بسته‌ای برای ترسیم شکل
+\RequirePackage{tikz}
+\usetikzlibrary{shapes.geometric, positioning, arrows.meta}
 % بارگذاری دستورات مرجع‌نویسی
 \input{Reference}
 % بارگذاری کلاس حروف‌نگاری فارسی
